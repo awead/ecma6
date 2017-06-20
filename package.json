@@ -1,5 +1,8 @@
 {
   "name": "ecma6",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "eslint-plugin-jasmine": "^2.4.0"
+  }
 }

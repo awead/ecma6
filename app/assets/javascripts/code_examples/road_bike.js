@@ -16,10 +16,10 @@ class RoadBike extends Bicycle {
   }
 
   get default_tire_size() {
-    return '23'
+    return "23"
   }
 
   get default_tape_color() {
-    return 'black'
+    return "black"
   }
 }

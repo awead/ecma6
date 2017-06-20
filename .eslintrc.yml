@@ -1,0 +1,27 @@
+plugins:
+  - jasmine
+env:
+  browser: true
+  es6: true
+  jasmine: true
+extends:
+  - 'plugin:jasmine/recommended'
+  - 'eslint:recommended'
+parserOptions:
+  sourceType: module
+rules:
+  indent:
+    - error
+    - 2
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - double
+  semi:
+    - error
+    - never
+  no-undef:
+    - off
+  no-multiple-empty-lines: [2, {max: 1}]

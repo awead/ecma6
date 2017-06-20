@@ -25,9 +25,8 @@ class Bicycle {
     return new Object({tire_size: this.tire_size, chain: this.chain})
   }
 
-
   get default_chain() {
-    return '10-speed'
+    return "10-speed"
   }
 
   get default_tire_size() {
