@@ -1,14 +1,7 @@
 class RoadBike extends Bicycle {
   constructor(arg) {
     super(arg)
-
-    if ( arg.tape_color === undefined ) {
-      this.tape_color = this.default_tape_color
-    }
-    else {
-      this.tape_color = arg.tape_color
-    }
-
+    this.tape_color = arg.tape_color || this.default_tape_color
   }
 
   get spares() {
@@ -22,4 +15,5 @@ class RoadBike extends Bicycle {
   get default_tape_color() {
     return "black"
   }
+
 }

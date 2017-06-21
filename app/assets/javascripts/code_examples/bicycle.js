@@ -1,20 +1,8 @@
 class Bicycle {
   constructor(arg) {
     this.size = arg.size
-
-    if ( arg.chain === undefined ) {
-      this.chain = this.default_chain
-    }
-    else {
-      this.chain = arg.chain
-    }
-
-    if ( arg.tire_size === undefined ) {
-      this.tire_size = this.default_tire_size
-    }
-    else {
-      this.tire_size = arg.tire_size
-    }
+    this.chain = arg.chain || this.default_chain
+    this.tire_size = arg.tire_size || this.default_tire_size
   }
 
   // Use get for methods that only return something. This enables you do to:

@@ -1,7 +1,6 @@
 class MountainBike extends Bicycle {
   constructor(arg) {
     super(arg)
-
     this.front_shock = arg.front_shock
     this.rear_shock = arg.rear_shock
   }
