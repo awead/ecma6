@@ -1,13 +1,5 @@
-class Decorator {
-  constructor(element) {
-    this.element = element
+class Decorator extends AbstractDecorator {
+  decorate(dom_element) {
+    $(dom_element).append(String.fromCharCode(0xD83D, 0xDE04))
   }
-
-  activate() {
-    $(this.element).on("click", function(event) {
-      event.preventDefault()
-      $(this).append(String.fromCharCode(0xD83D, 0xDE04))
-    })
-  }
-
 }

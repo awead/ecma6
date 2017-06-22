@@ -19,7 +19,7 @@ describe("External data", function() {
         responseText: "json data"
       })
 
-      source.fetch
+      source.decorate()
     })
 
     afterEach(function() {

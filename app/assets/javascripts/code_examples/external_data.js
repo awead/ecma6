@@ -1,19 +1,10 @@
-class ExternalData {
+class ExternalData extends AbstractDecorator {
   constructor(element) {
-    this.element = element
+    super(element)
     this.endpoint = $(element).data("endpoint")
   }
 
-  activate() {
-    let external_data = this
-    $(this.element).on("click", function(event) {
-      event.preventDefault()
-      external_data.fetch
-    })
-  }
-
-  get fetch() {
-    let external_data = this
+  decorate() {
     $.get( this.endpoint, function(data) {
       $(".title").html(data.title)
       $(".description").html(data.description)
