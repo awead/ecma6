@@ -22,4 +22,9 @@ $( document ).ready(function() {
     let decorator = new Decorator(this)
     decorator.activate()
   })
+
+  $(".external-data").each(function() {
+    let external_data = new ExternalData(this)
+    external_data.activate()
+  })
 })
