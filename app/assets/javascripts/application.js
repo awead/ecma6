@@ -15,3 +15,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree ./code_examples
+
+// Register functions
+$( document ).ready(function() {
+  $(".decorate").each(function() {
+    let decorator = new Decorator(this)
+    decorator.activate()
+  })
+})
