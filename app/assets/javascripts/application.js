@@ -19,12 +19,10 @@
 // Register functions
 $( document ).ready(function() {
   $(".decorate").each(function() {
-    let decorator = new Decorator(this)
-    decorator.activate()
+    new Decorator(this)
   })
 
   $(".external-data").each(function() {
-    let external_data = new ExternalData(this)
-    external_data.activate()
+    new ExternalData(this)
   })
 })

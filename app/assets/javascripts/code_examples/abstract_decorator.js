@@ -1,9 +1,6 @@
 class AbstractDecorator {
   constructor(element) {
     this.element = element
-  }
-
-  activate() {
     let $this = this
     $(this.element).on("click", function(event) {
       event.preventDefault()

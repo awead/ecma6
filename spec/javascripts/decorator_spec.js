@@ -10,8 +10,7 @@ describe("Decorator", function() {
     beforeEach(function() {
       setFixtures("sample <a class=\"selector\">clickable</a> text")
       $(".selector").each(function() {
-        let decorator = new Decorator(this)
-        decorator.activate()
+        new Decorator(this)
       })
     })
 
