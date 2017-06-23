@@ -1,24 +1,22 @@
-# README
+# ECMA Script 6 in Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Demo application to demonstrate some patterns of using ECMA 6 Javascript within the context of a
+Rails application.
 
-Things you may want to cover:
+## Usage
 
-* Ruby version
+    bundle install
+    bundle exec rails s
 
-* System dependencies
+## Tests
 
-* Configuration
+    bundle exec rake jasmine
 
-* Database creation
+And then test on localhost:8888
 
-* Database initialization
+## Notes
 
-* How to run the test suite
+I've used some examples from Sandi Metz's [Practical Object-Oriented Design in Ruby](http://www.poodr.com/).
+The rest comes from Dr. Axel Rauschmayer's  [Exploring ES6](http://exploringjs.com/es6/index.html)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
