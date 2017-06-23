@@ -5,14 +5,16 @@ class ExternalData extends AbstractDecorator {
   }
 
   decorate() {
-    let $this = this
-    $.get(this.endpoint, function(data) {
-      $(".status").text("Data loaded")
-      $this.display_results(data)
-    }).fail(function() {
-      $(".status").text("Unable to load data")
-      $this.display_results()
-    })
+    this.ajaxGet(this.endpoint)
+      .then(data => {
+        $(".status").text("Data loaded")
+        this.display_results(JSON.parse(data))
+      })
+      .catch(error => {
+        console.log(error)
+        $(".status").text("Unable to load data")
+        this.display_results()
+      })
   }
 
   display_results(data) {
@@ -24,5 +26,26 @@ class ExternalData extends AbstractDecorator {
       $(".title").html(data.title)
       $(".description").html(data.description)
     }
+  }
+
+  ajaxGet(url) {
+    return new Promise(function(resolve, reject) {
+      let req = new XMLHttpRequest()
+      req.open("GET", url)
+      req.onload = function() {
+        if (req.status === 200) {
+          resolve(req.response)
+        }
+        else {
+          reject(req.statusText)
+        }
+      }
+
+      req.onerror = function() {
+        reject("Network error")
+      }
+
+      req.send()
+    })
   }
 }
