@@ -5,16 +5,20 @@ class ExternalData extends AbstractDecorator {
   }
 
   decorate() {
-    this.ajaxGet(this.endpoint)
-      .then(data => {
-        $(".status").text("Data loaded")
-        this.display_results(JSON.parse(data))
-      })
-      .catch(error => {
-        console.log(error)
-        $(".status").text("Unable to load data")
-        this.display_results()
-      })
+    this._ajaxGet(this.endpoint)
+      .then(data => { this.success(data) })
+      .catch(error => { this.fail(error) })
+  }
+
+  success(data) {
+    $(".status").text("Data loaded")
+    this.display_results(JSON.parse(data))
+  }
+
+  fail(error) {
+    // we can do something with error if we want to, or not
+    $(".status").text("Unable to load data")
+    this.display_results()
   }
 
   display_results(data) {
@@ -28,7 +32,9 @@ class ExternalData extends AbstractDecorator {
     }
   }
 
-  ajaxGet(url) {
+  // Taken from http://ccoenraets.github.io/es6-tutorial-data/promisify/
+  // TODO: extract to a module with its own tests
+  _ajaxGet(url) {
     return new Promise(function(resolve, reject) {
       let req = new XMLHttpRequest()
       req.open("GET", url)
